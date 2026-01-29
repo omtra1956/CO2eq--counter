@@ -1,0 +1,7 @@
+{
+  "name": "co2-counter",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
