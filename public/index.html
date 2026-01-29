@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <title>CO₂e Live</title>
+  <style>
+    body { font-family: system-ui; padding: 40px; }
+    .big { font-size: 60px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="big"><span id="kg">0.00</span> kg CO₂e</div>
+
+  <script>
+    const el = document.getElementById("kg");
+    const es = new EventSource("/events");
+    es.onmessage = e => {
+      const data = JSON.parse(e.data);
+      el.textContent = Number(data.totalKg).toFixed(2);
+    };
+  </script>
+</body>
+</html>
