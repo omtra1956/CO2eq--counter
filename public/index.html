@@ -2,14 +2,38 @@
 <html lang="it">
 <head>
   <meta charset="utf-8" />
-  <title>CO₂e Live</title>
+  <title>CO₂eq Live</title>
   <style>
-    body { font-family: system-ui; padding: 40px; }
-    .big { font-size: 60px; font-weight: bold; }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+    }
+
+    .big {
+      font-size: 140px;
+      font-weight: 800;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .unit {
+      font-size: 48px;
+      font-weight: 600;
+      margin-left: 16px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
-  <div class="big"><span id="kg">0.00</span> kg CO₂e</div>
+  <div class="big">
+    <span id="kg">0.00</span>
+    <span class="unit">kg CO₂eq</span>
+  </div>
 
   <script>
     const el = document.getElementById("kg");
@@ -21,3 +45,4 @@
   </script>
 </body>
 </html>
+
