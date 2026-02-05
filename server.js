@@ -4,15 +4,15 @@ const app = express();
 app.use(express.static("public"));
 
 const config = {
-  start: "2026-02-5T08:00:00+01:00",
-  end: "2026-02-5T18:00:00+01:00",
+  start: "2026-02-05T08:00:00+01:00",
+  end: "2026-02-05T18:00:00+01:00",
 
   powerKW: 12.0,
   emissionFactorKgPerKWh: 0.25,
 
   foodJumps: [
-    { at: "2026-02-5T09:05:00+01:00", kg: 38.5, label: "Coffee break" },
-    { at: "2026-02-5T13:30:00+01:00", kg: 120.0, label: "Pranzo" },
+    { at: "2026-02-05T09:05:00+01:00", kg: 38.5, label: "Coffee break" },
+    { at: "2026-02-05T13:30:00+01:00", kg: 120.0, label: "Pranzo" },
   ],
 };
 
