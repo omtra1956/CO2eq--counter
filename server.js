@@ -4,8 +4,8 @@ const app = express();
 app.use(express.static("public"));
 
 const config = {
-  start: "2026-01-29T09:00:00+01:00",
-  end: "2026-01-29T18:00:00+01:00",
+  start: "2026-02-5T08:00:00+01:00",
+  end: "2026-02-5T18:00:00+01:00",
 
   powerKW: 12.0,
   emissionFactorKgPerKWh: 0.25,
