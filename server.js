@@ -11,8 +11,8 @@ const config = {
   emissionFactorKgPerKWh: 0.25,
 
   foodJumps: [
-    { at: "2026-01-29T11:30:00+01:00", kg: 38.5, label: "Coffee break" },
-    { at: "2026-01-29T13:30:00+01:00", kg: 120.0, label: "Pranzo" },
+    { at: "2026-02-5T09:05:00+01:00", kg: 38.5, label: "Coffee break" },
+    { at: "2026-02-5T13:30:00+01:00", kg: 120.0, label: "Pranzo" },
   ],
 };
 
