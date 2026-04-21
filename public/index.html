@@ -25,6 +25,19 @@
       background: #657F00;
       color: #EBEBB7; 
     }
+ #fullscreen-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 24px;
+  color: #EBEBB7;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+#fullscreen-btn:hover {
+  opacity: 1;
+}
 
     .big {
       font-size: 140px;
@@ -46,6 +59,8 @@
     <span id="kg">0.00</span>
     <span class="unit">kg CO₂eq</span>
   </div>
+
+  <div id="fullscreen-btn">⛶</div>
 
   <script>
     const el = document.getElementById("kg");
