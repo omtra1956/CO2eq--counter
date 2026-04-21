@@ -4,17 +4,20 @@
   <meta charset="utf-8" />
   <title>CO₂eq Live</title>
   <style>
- @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-Medium.woff2") format("woff2");
-    font-weight: 500;
-  }
+    @font-face {
+      font-family: "Montserrat";
+      src: url("/fonts/Montserrat-Medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+    }
 
-  @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/Montserrat-SemiBold.woff2") format("woff2");
-    font-weight: 600;}
-    
+    @font-face {
+      font-family: "Montserrat";
+      src: url("/fonts/Montserrat-SemiBold.woff2") format("woff2");
+      font-weight: 600;
+      font-style: normal;
+    }
+
     body {
       margin: 0;
       font-family: "Montserrat", system-ui, sans-serif;
@@ -23,32 +26,34 @@
       align-items: center;
       justify-content: center;
       background: #657F00;
-      color: #EBEBB7; 
+      color: #EBEBB7;
     }
- #fullscreen-btn {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  font-size: 24px;
-  color: #EBEBB7;
-  cursor: pointer;
-  opacity: 0.6;
-}
 
-#fullscreen-btn:hover {
-  opacity: 1;
-}
+    #fullscreen-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 24px;
+      color: #EBEBB7;
+      cursor: pointer;
+      opacity: 0.4;
+    }
+
+    #fullscreen-btn:hover {
+      opacity: 1;
+    }
 
     .big {
       font-size: 140px;
-      font-weight: 800;
+      font-weight: 600;
       line-height: 1;
       text-align: center;
+      font-variant-numeric: tabular-nums;
     }
 
     .unit {
       font-size: 48px;
-      font-weight: 600;
+      font-weight: 500;
       margin-left: 16px;
       vertical-align: middle;
     }
@@ -65,18 +70,27 @@
   <script>
     const el = document.getElementById("kg");
     const es = new EventSource("/events");
+
     es.onmessage = e => {
       const data = JSON.parse(e.data);
       el.textContent = Number(data.totalKg).toFixed(2);
     };
+
     const btn = document.getElementById("fullscreen-btn");
 
-btn.addEventListener("click", () => {
-  if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen();
-  }
-});
+    btn.addEventListener("click", () => {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      }
+    });
+
+    document.addEventListener("fullscreenchange", () => {
+      if (document.fullscreenElement) {
+        btn.style.display = "none";
+      } else {
+        btn.style.display = "block";
+      }
+    });
   </script>
 </body>
 </html>
-
