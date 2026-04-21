@@ -4,6 +4,16 @@
   <meta charset="utf-8" />
   <title>CO₂eq Live</title>
   <style>
+    #logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+#logo img {
+  height: 60px; 
+  width: auto;
+}
     @font-face {
       font-family: "Montserrat";
       src: url("/fonts/Montserrat-Medium.woff2") format("woff2");
@@ -61,6 +71,9 @@
   </style>
 </head>
 <body>
+  <div id="logo">
+  <img src="/logo.png" alt="Logo">
+</div>
   <div class="big">
     <span id="kg">0.00</span>
     <span class="unit">kg CO₂eq</span>
