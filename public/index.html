@@ -69,6 +69,13 @@
       const data = JSON.parse(e.data);
       el.textContent = Number(data.totalKg).toFixed(2);
     };
+    const btn = document.getElementById("fullscreen-btn");
+
+btn.addEventListener("click", () => {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  }
+});
   </script>
 </body>
 </html>
